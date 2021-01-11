@@ -1,5 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
-import { FaSignInAlt, FaUser, FaLock, FaEyeSlash, FaEye } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../index.css';
 import Tilt from 'react-tilt';
 //import {inputRef,props} from 'react-password-toggle-icon';
 
@@ -26,11 +28,8 @@ function LoginPage() {
                         <Tilt className="Tilt"
                             options={
                                 { max: 50 }
-                            }
-                            style={
-                                { height: 250, width: 250 }
                             } >
-                            <div className="Tilt-inner login100-pic" >
+                            <div className="Tilt-inner login100-pic" data-tilt>
                                 <img src="./logo.jpeg"
                                     alt="IMG" />
                             </div>
@@ -48,9 +47,7 @@ function LoginPage() {
                                     placeholder="Matricule" />
                                 <span className="focus-input100"></span>
                                 <span className="symbol-input100">
-                                    <i aria hidden="true">
-                                        <FaUser />
-                                    </i>
+                                    <FaIcons.FaUser />
                                 </span>
                             </div>
 
@@ -64,18 +61,16 @@ function LoginPage() {
                                 < span className="focus-input100">
                                 </span>
                                 <span className="symbol-input100">
-                                    <i aria hidden="true">
-                                        <FaLock />
-                                    </i>
+                                    <FaIcons.FaLock />
                                 </span >
                                 <span className="symbol-input200">
-                                    <button
+                                    <a
                                         className="text-dark"
                                         toggle="#password-field" >
                                         <i className="toggle-password" >
-                                            <FaEyeSlash />
+                                            <FaIcons.FaEyeSlash />
                                         </i>
-                                    </button>
+                                    </a>
                                 </span>
                             </div>
 
@@ -87,18 +82,20 @@ function LoginPage() {
                                     name="logInadmin"
                                     type="submit" >
                                     <i className="fa-signIn" >
-                                        <FaSignInAlt />
+                                        <FaIcons.FaSignInAlt />
                                     </i>
                                     Connexion
                                 </button>
                             </div>
                             <div className="text-center p-t-12">
                                 <span className="txt1">
-                                    Vous avez oublié </span>
-                                <button className="txt2"
+                                    Vous avez oublié 
+                                </span>
+
+                                <a className="txt2"
                                     href="" >
                                     Votre Mot de passe ?
-                                </button>
+                                </a>
                             </div>
                         </form>
                     </div>

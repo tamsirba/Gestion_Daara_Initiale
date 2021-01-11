@@ -126,7 +126,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 43px 130px 33px 95px;
+    padding: 50px 130px 33px 95px;
   }
   .login100-pic {
     width: 250px;
@@ -283,7 +283,7 @@ body {
   
   @media (max-width: 768px) {
     .wrap-login100 {
-      padding: 33px 80px 33px 80px;
+      padding: 100px 80px 33px 80px;
     }
   
     .login100-pic {
@@ -297,7 +297,7 @@ body {
   
   @media (max-width: 576px) {
     .wrap-login100 {
-      padding: 33px 15px 33px 15px;
+      padding: 100px 15px 33px 15px;
     }
   }
   .validate-input {

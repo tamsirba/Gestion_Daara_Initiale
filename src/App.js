@@ -1,10 +1,10 @@
 import './App.css';
 import LoginPage from "./pages/login";
-import SidebarAdmin from "./pages/SidebarAdmin";
+import SidebarAdmin from "./components/SidebarAdmin";
 function App() {
   return (
     <div className="App">
-      <SidebarAdmin />
+      <LoginPage />
     </div>
   );
 }

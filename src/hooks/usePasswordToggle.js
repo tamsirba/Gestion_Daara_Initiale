@@ -5,7 +5,7 @@ const usePasswordToggle = () => {
     const [visible, setVisibility] = useState(false);
 
     const Icon = (
-        <FaEyeSlash 
+        <FaEye
         icon ={ visible ? <FaEyeSlash /> : <FaEye />}
         onclick={() =>setVisibility( visibility => !visibility)} />
     )
