@@ -1,6 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
 import { FaSignInAlt, FaUser, FaLock, FaEyeSlash, FaEye } from 'react-icons/fa';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Tilt from 'react-tilt';
 //import {inputRef,props} from 'react-password-toggle-icon';
 
