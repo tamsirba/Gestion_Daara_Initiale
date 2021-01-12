@@ -1,9 +1,10 @@
 import React, { Component, useState, useEffect } from "react";
 import * as FaIcons from 'react-icons/fa';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css';
 import Tilt from 'react-tilt';
-//import {inputRef,props} from 'react-password-toggle-icon';
+import usePasswordToggle from "../hooks/usePasswordToggle";
 
 function LoginPage() {
     const handleSubmitTeacher = () => {
@@ -19,6 +20,8 @@ function LoginPage() {
     const handleSubmitStudent = () => {
         // Submit avec Etudiant
     }
+
+    const [PasswordInputType, ToggleIcon] = usePasswordToggle();
 
     return (
         <main>
@@ -54,7 +57,7 @@ function LoginPage() {
                             <div className="wrap-input100 validate-input"
                                 data validate="Password is required" >
                                 <input className="input100"
-                                    type="password"
+                                    type={PasswordInputType}
                                     name="password"
                                     placeholder="Password"
                                     id="inputPassword" />
@@ -64,13 +67,9 @@ function LoginPage() {
                                     <FaIcons.FaLock />
                                 </span >
                                 <span className="symbol-input200">
-                                    <a
-                                        className="text-dark"
-                                        toggle="#password-field" >
-                                        <i className="toggle-password" >
-                                            <FaIcons.FaEyeSlash />
-                                        </i>
-                                    </a>
+                                    <i className="toggle-password" >
+                                        {ToggleIcon}
+                                    </i>
                                 </span>
                             </div>
 

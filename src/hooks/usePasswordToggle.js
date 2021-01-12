@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const usePasswordToggle = () => {
     const [visible, setVisibility] = useState(false);
 
     const Icon = (
-        <FaEye
-        icon ={ visible ? <FaEyeSlash /> : <FaEye />}
-        onclick={() =>setVisibility( visibility => !visibility)} />
+        <FontAwesomeIcon
+        icon ={ visible ? 'eye' : 'eye-slash'}
+        onClick={ () =>setVisibility( visibility => !visibility)} />
     )
 
     const InputType = visible ? "text" : "password";
