@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'jquery/dist/jquery.min.js';
-import 'jquery-easing/dist/jquery.easing.1.3.umd.min.js';
 import * as FaIcons from 'react-icons/fa';
 import * as ImIcons from 'react-icons/im';
 import * as SiIcons from 'react-icons/si';
