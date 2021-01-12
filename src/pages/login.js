@@ -1,6 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
 import * as FaIcons from 'react-icons/fa';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css';
 import Tilt from 'react-tilt';
