@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../Sidebar.css';
+import '../../styles/gesdaara.css';
 import '../../assets/fontawesome-free/css/all.css';
+import PopupAdmin from '../Dialog/PopupAdmin';
+import AdminForm from '../Forms/formAdmin';
+import PopupTeacher from '../Dialog/PopupTeacher';
+import TeacherForm from '../Forms/formTeacher';
+import PopupStudent from '../Dialog/PopupStudent';
+import StudentForm from '../Forms/formStudent';
+import PopupTeacherModClass from '../Dialog/PopupTeacherModClass';
+import TeacherModClassForm from '../Forms/formTeacherModClass';
 import * as FaIcons from 'react-icons/fa';
 import * as ImIcons from 'react-icons/im';
 import * as SiIcons from 'react-icons/si';
@@ -9,7 +16,14 @@ import * as GoIcons from 'react-icons/go';
 
 
 
+
+
 function SidebarAdmin() {
+
+  const [openPopupAdmin, setOpenPopupAdmin] = useState(false);
+  const [openPopupTeacher, setOpenPopupTeacher] = useState(false);
+  const [openPopupTeacherModClass, setOpenPopupTeacherModClass] = useState(false);
+  const [openPopupStudent, setOpenPopupStudent] = useState(false);
 
   const [ toggled, setToggled ] = React.useState(false);
     
@@ -71,12 +85,19 @@ function SidebarAdmin() {
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Action:</h6>
             <a 
-              className="collapse-item" 
-              href="" 
-              data-toggle="modal" 
-              data-target="#exampleModalCenter2">
+              className="collapse-item"
+              type="button"
+              onClick={() => setOpenPopupAdmin(true)} 
+            >
                 Ajouter
             </a>
+            <PopupAdmin
+              title="Ajouter admin"
+              openPopupAdmin = {openPopupAdmin}
+              setOpenPopupAdmin = {setOpenPopupAdmin}
+            >
+              <AdminForm />
+            </PopupAdmin>
           </div>
         </div>
       </li>
@@ -103,25 +124,35 @@ function SidebarAdmin() {
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Action:</h6>
             <a 
-              className="collapse-item" 
-              href="" 
-              data-toggle="modal" 
-              data-target="#exampleModalCenter">
+              className="collapse-item"
+              type="button"
+              onClick={() => setOpenPopupTeacher(true)}
+            >
                 Ajouter
             </a>
+            <PopupTeacher
+              title="Ajouter professeur"
+              openPopupTeacher = {openPopupTeacher}
+              setOpenPopupTeacher = {setOpenPopupTeacher}
+            >
+              <TeacherForm />
+            </PopupTeacher>
             <a 
               className="collapse-item" 
-              href="" 
-              data-toggle="modal" 
-              data-target="#exampleModalCenter9">
+              type="button"
+              onClick={() => setOpenPopupTeacherModClass(true)} >
                 Ajouter Prof-Mod-classe
             </a>
+            <PopupTeacherModClass
+              title="Ajouter professeur"
+              openPopupTeacherModClass = {openPopupTeacherModClass}
+              setOpenPopupTeacherModClass = {setOpenPopupTeacherModClass}
+            >
+              <TeacherModClassForm />
+            </PopupTeacherModClass>
           </div>
         </div>
       </li>
-
-      
-      <hr className="sidebar-divider" />
       
       <li className="nav-item">
         <a 
@@ -145,54 +176,21 @@ function SidebarAdmin() {
             <h6 className="collapse-header">Action:</h6>
             <a 
               className="collapse-item" 
-              href="" 
-              data-toggle="modal" 
-              data-target="#exampleModalCenter1">
+              type="button"
+              onClick={() => setOpenPopupStudent(true)} >
                 Ajouter
             </a>
+            <PopupStudent
+              title="Ajouter étudiant"
+              openPopupStudent = {openPopupStudent}
+              setOpenPopupStudent = {setOpenPopupStudent}
+            >
+              <StudentForm />
+            </PopupStudent>
           </div>
         </div>
       </li>
 
-      
-      <li className="nav-item">
-        <a 
-          className="nav-link collapsed" 
-          href="" 
-          data-toggle="collapse" 
-          data-target="#collapseclasse" 
-          aria-expanded="true" 
-          aria-controls="collapseclasse">
-          <i className="fas fa-fw">
-            <SiIcons.SiGoogleclassroom />
-          </i>
-          <span>classes</span></a>
-          <div 
-            id="collapseclasse" 
-            className="collapse" 
-            aria-labelledby="headingclass" 
-            data-parent="#accordionSidebar">
-            <div className="bg-white py-2 collapse-inner rounded">
-              <h6 className="collapse-header">Action:</h6>
-              <a 
-                className="collapse-item" 
-                href="">
-                  Ajouter
-              </a>
-            </div>
-          </div>
-      </li>
-
-      
-      <li className="nav-item" id="show">
-        <a className="nav-link" href="">
-          <i className="fas fa-fw">
-            <GoIcons.GoFileSubmodule />
-          </i>
-          <span>Modules</span></a>
-      </li>
-
-      
       <li className="nav-item" id="show">
         <a 
           className="nav-link collapsed" 
@@ -229,6 +227,42 @@ function SidebarAdmin() {
               </a>
             </div>
         </div>
+      </li>
+
+      <li className="nav-item">
+        <a 
+          className="nav-link collapsed" 
+          href="" 
+          data-toggle="collapse" 
+          data-target="#collapseclasse" 
+          aria-expanded="true" 
+          aria-controls="collapseclasse">
+          <i className="fas fa-fw">
+            <SiIcons.SiGoogleclassroom />
+          </i>
+          <span>classes</span></a>
+          <div 
+            id="collapseclasse" 
+            className="collapse" 
+            aria-labelledby="headingclass" 
+            data-parent="#accordionSidebar">
+            <div className="bg-white py-2 collapse-inner rounded">
+              <h6 className="collapse-header">Action:</h6>
+              <a 
+                className="collapse-item" 
+                href="">
+                  Ajouter
+              </a>
+            </div>
+          </div>
+      </li>
+
+      <li className="nav-item" id="show">
+        <a className="nav-link" href="">
+          <i className="fas fa-fw">
+            <GoIcons.GoFileSubmodule />
+          </i>
+          <span>Modules</span></a>
       </li>
 
 

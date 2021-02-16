@@ -1,9 +1,9 @@
 import React, { Component, useState, useEffect } from "react";
 import * as FaIcons from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../index.css';
+import '../../index.css';
 import Tilt from 'react-tilt';
-import usePasswordToggle from "../hooks/usePasswordToggle";
+import usePasswordToggle from "../../hooks/usePasswordToggle";
 
 function LoginPage() {
     const handleSubmitTeacher = () => {

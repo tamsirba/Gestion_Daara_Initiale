@@ -1,13 +1,12 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import '../../styles/gesdaara.css';
 import * as GoIcons from 'react-icons/go';
-import '../../assets/css/calendar.css';
-//import '../../assets/js/zabuto';
-
+import { Button } from 'react-bootstrap';
 
 
 
 function Content() {
+
     return (
         <div className="container-fluid">
             <div className="d-sm-flex align-items-center justify-content-between mb-4">

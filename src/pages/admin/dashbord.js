@@ -1,12 +1,14 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import SidebarAdmin from '../../components/admin/SidebarAdmin';
 import NavbarAdmin from '../../components/admin/NavbarAdmin';
 import Footer from '../../components/Footer';
 import Content from '../../components/admin/Container';
+import '../../App.css';
 import * as FaIcons from 'react-icons/fa';
 
 
 function Dashbord() {
+
     return (
         <div className="Dashbord">
             <div id="wrapper">

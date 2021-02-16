@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../Toggle.css';
+import '../../styles/gesdaara.css';
+import '../../styles/Toggle.css';
 import * as FaIcons from 'react-icons/fa';
 
 function NavbarAdmin() {

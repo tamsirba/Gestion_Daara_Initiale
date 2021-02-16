@@ -1,8 +1,9 @@
 import './App.css';
-import LoginPage from "./pages/login";
+import LoginPage from "./pages/login/login";
 import Dashbord from "./pages/admin/dashbord";
 import './components/FontawesomeIcons';
 function App() {
+
   return (
     <div className="App">
       <Dashbord />
