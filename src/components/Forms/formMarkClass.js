@@ -5,34 +5,36 @@ import { useForm, Form } from '../useForm';
 
 
 
-const filiereItems = [
-    { id: 1, title: 'IG'},
-    { id: 2, title: 'DAF'},
-    { id: 3, title: 'MC'},
-    { id: 4, title: 'JCOM'},
-    { id: 5, title: 'BAF'},
-    { id: 6, title: 'TL'},
-    { id: 7, title: 'CG'},
-    { id: 8, title: 'CI'},
-    { id: 9, title: 'GRH'},
-    { id: 10, title: 'AE'},
+const classItems = [
+    { id: 1, title: 'L1IGAB'},
+    { id: 2, title: 'L2IGAB'},
+    { id: 3, title: 'L3IGAB'},
+    { id: 4, title: 'L1BAFAB'},
+    { id: 5, title: 'L2BAFAB'},
+    { id: 6, title: 'L3BAFAB'},
 ]
 
-const personItems = [
-    { id: 1, title: 'M. Balde'},
-    { id: 2, title: 'M. Drame'},
-    { id: 3, title: 'Mme Sall'},
-    { id: 4, title: 'M. Ba'},
-    { id: 5, title: 'M. Thiam'},
-    { id: 6, title: 'M. Tamba'},
+const semesterItems = [
+    { id: 1, title: 'Semestre 1'},
+    { id: 2, title: 'Semestre 2'},
+    { id: 3, title: 'Semestre 3'},
+    { id: 4, title: 'Semestre 4'},
+    { id: 5, title: 'Semestre 5'},
+    { id: 6, title: 'Semestre 6'},
 ]
 
-const levelItems = [
-    { id: 1, title: 'L1'},
-    { id: 2, title: 'L2'},
-    { id: 3, title: 'L3'},
-    { id: 4, title: 'M1'},
-    { id: 5, title: 'M2'},
+const examItems = [
+    { id: 1, title: 'Devoir'},
+    { id: 2, title: 'Examen'},
+]
+
+const modulItems = [
+    { id: 1, title: 'Algorithme'},
+    { id: 2, title: 'Maintenance et reseaux'},
+    { id: 3, title: 'Programmation'},
+    { id: 4, title: 'Mathematiques'},
+    { id: 5, title: 'Anglais'},
+    { id: 6, title: 'Gestion de projet'},
 ]
 
 const yearItems = [
@@ -47,26 +49,26 @@ const yearItems = [
 
 const initialFValues = {
     id: 0,
-    filiere: '',
-    classname: '',
-    person: '',
-    level: '',
+    class: '',
     year: '',
+    modul: '',
+    semester: '',
+    exam: '',
 }
 
-export default function ClassForm(props) {
+export default function MarkClassForm(props) {
     const { addOrEdit, recordForEdit } = props
 
     const validate = (fieldValues = values) => {
         let temp = { ...errors }
-        if ('classname' in fieldValues)
-            temp.classname = fieldValues.classname ? "" : "This field is required."
-        if ('filiere' in fieldValues)
-            temp.filiere = fieldValues.filiere.length > 9 ? "" : "Minimum 10 numbers required."
-        if ('person' in fieldValues)
-            temp.person = fieldValues.person.length != 0 ? "" : "This field is required."
-        if ('level' in fieldValues)
-            temp.level = fieldValues.level ? "" : "This field is required."
+        if ('class' in fieldValues)
+            temp.class = fieldValues.class ? "" : "This field is required."
+        if ('semester' in fieldValues)
+            temp.semester = fieldValues.semester.length > 9 ? "" : "Minimum 10 numbers required."
+        if ('year' in fieldValues)
+            temp.year = fieldValues.year.length != 0 ? "" : "This field is required."
+        if ('modul' in fieldValues)
+            temp.modul = fieldValues.modul ? "" : "This field is required."
         setErrors({
             ...temp
         })
@@ -102,40 +104,21 @@ export default function ClassForm(props) {
         <Form onSubmit={handleSubmit}>
             <Grid container>
                 <Grid item xs={6}>
-                    <Controls.Input
-                        label="Nom classe"
-                        name="classname"
+                    <Controls.Select
+                        label="Classe"
+                        name="class"
                         value={values.classname}
                         onChange={handleInputChange}
-                        error={errors.profil}
+                        options={classItems}
                       
                     />
                     <Controls.Select
-                        label="Filière"
-                        name="filiere"
-                        value={values.filiere}
-                        options={filiereItems}
+                        label="Semestre"
+                        name="semester"
+                        value={values.semester}
+                        options={semesterItems}
                         onChange={handleInputChange}
                       
-                    />
-                    <Controls.Select
-                        label="Responsable"
-                        name="person"
-                        value={values.person}
-                        options={personItems}
-                        onChange={handleInputChange}
-                      
-                    />
-
-                </Grid>
-                <Grid item xs={6}>
-                    <Controls.Select
-                        label="Niveau"
-                        name="level"
-                        value={values.level}
-                        options={levelItems}
-                        onChange={handleInputChange}
-                        error={errors.level}
                     />
                     <Controls.Select
                         label="Année"
@@ -143,6 +126,25 @@ export default function ClassForm(props) {
                         value={values.year}
                         options={yearItems}
                         onChange={handleInputChange}
+                    />
+
+                </Grid>
+                <Grid item xs={6}>
+                    <Controls.Select
+                        label="Module"
+                        name="modul"
+                        value={values.modul}
+                        options={modulItems}
+                        onChange={handleInputChange}
+                        error={errors.modul}
+                    />
+                    <Controls.Select
+                        label="Evaluation"
+                        name="exam"
+                        value={values.exam}
+                        options={examItems}
+                        onChange={handleInputChange}
+                      
                     />
 
                     <div>

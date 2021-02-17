@@ -111,7 +111,7 @@ export default function AdminForm(props) {
 
                 </Grid>
                 <Grid item xs={6}>
-                    <Controls.Input
+                    <Controls.InputNumber
                         label="Autorisation"
                         name="auto"
                         value={values.auto}

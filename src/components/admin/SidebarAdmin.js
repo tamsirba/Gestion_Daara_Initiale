@@ -9,6 +9,12 @@ import PopupStudent from '../Dialog/PopupStudent';
 import StudentForm from '../Forms/formStudent';
 import PopupTeacherModClass from '../Dialog/PopupTeacherModClass';
 import TeacherModClassForm from '../Forms/formTeacherModClass';
+import PopupClass from '../Dialog/PopupClass';
+import ClassForm from '../Forms/formClass';
+import PopupMarkClass from '../Dialog/PopupMarkClass';
+import MarkClassForm from '../Forms/formMarkClass';
+import PopupMarkStudent from '../Dialog/PopupMarkStudent';
+import MarkStudentForm from '../Forms/formMarkStudent';
 import * as FaIcons from 'react-icons/fa';
 import * as ImIcons from 'react-icons/im';
 import * as SiIcons from 'react-icons/si';
@@ -20,10 +26,14 @@ import * as GoIcons from 'react-icons/go';
 
 function SidebarAdmin() {
 
+
   const [openPopupAdmin, setOpenPopupAdmin] = useState(false);
   const [openPopupTeacher, setOpenPopupTeacher] = useState(false);
   const [openPopupTeacherModClass, setOpenPopupTeacherModClass] = useState(false);
   const [openPopupStudent, setOpenPopupStudent] = useState(false);
+  const [openPopupClass, setOpenPopupClass] = useState(false);
+  const [openPopupMarkStudent, setOpenPopupMarkStudent] = useState(false);
+  const [openPopupMarkClass, setOpenPopupMarkClass] = useState(false);
 
   const [ toggled, setToggled ] = React.useState(false);
     
@@ -144,7 +154,7 @@ function SidebarAdmin() {
                 Ajouter Prof-Mod-classe
             </a>
             <PopupTeacherModClass
-              title="Ajouter professeur"
+              title="Ajouter professeur module classe"
               openPopupTeacherModClass = {openPopupTeacherModClass}
               setOpenPopupTeacherModClass = {setOpenPopupTeacherModClass}
             >
@@ -212,19 +222,29 @@ function SidebarAdmin() {
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Action:</h6>
               <a 
-                className="collapse-item" 
-                href="" 
-                data-toggle="modal" 
-                data-target="#exampleModalCenterNot">
+                className="collapse-item"
+                type="button" 
+                onClick={() => setOpenPopupMarkClass(true)}>
                   Notes classes
               </a>
+              <PopupMarkClass
+                title="Afficher notes classes"
+                openPopupMarkClass={openPopupMarkClass}
+                setOpenPopupMarkClass={setOpenPopupMarkClass}>
+                <MarkClassForm />
+              </PopupMarkClass>
               <a 
                 className="collapse-item" 
-                href="" 
-                data-toggle="modal" 
-                data-target="#exampleModalCenterEtu">
+                type="button"
+                onClick={() => setOpenPopupMarkStudent(true)}>
                   Notes Etudiant
               </a>
+              <PopupMarkStudent
+                title="Afficher notes étudiant"
+                openPopupMarkStudent={openPopupMarkStudent}
+                setOpenPopupMarkStudent={setOpenPopupMarkStudent}>
+                <MarkStudentForm />
+              </PopupMarkStudent>
             </div>
         </div>
       </li>
@@ -250,9 +270,17 @@ function SidebarAdmin() {
               <h6 className="collapse-header">Action:</h6>
               <a 
                 className="collapse-item" 
-                href="">
+                type="button"
+                onClick={() => setOpenPopupClass(true)} >
                   Ajouter
               </a>
+              <PopupClass
+                title="Ajouter classe"
+                openPopupClass = {openPopupClass}
+                setOpenPopupClass = {setOpenPopupClass}
+              >
+                <ClassForm />
+              </PopupClass>
             </div>
           </div>
       </li>

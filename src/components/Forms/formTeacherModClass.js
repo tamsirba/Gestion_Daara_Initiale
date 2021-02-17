@@ -39,10 +39,10 @@ const coefItems = [
     { id: 4, title: '4'},
     { id: 5, title: '5'},
     { id: 6, title: '6'},
-    { id: 6, title: '7'},
-    { id: 6, title: '8'},
-    { id: 6, title: '9'},
-    { id: 6, title: '10'},
+    { id: 7, title: '7'},
+    { id: 8, title: '8'},
+    { id: 9, title: '9'},
+    { id: 10, title: '10'},
 ]
 
 const ueItems = [
