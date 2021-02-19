@@ -295,23 +295,6 @@ function SidebarAdmin() {
 
 
       <hr className="sidebar-divider d-none d-md-block" />
-      
-      {/*<li className="nav-item" id="show">
-        <a className="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseAction" aria-expanded="true" aria-controls="collapseAction">
-         <i className="fas fa-fw">
-            <GoIcons.GoSettings />
-         </i>
-          <span>Action</span></a>
-          <div id="collapseAction" className="collapse" aria-labelledby="headingclasse" data-parent="#accordionSidebar">
-            <div className="bg-white py-2 collapse-inner rounded">
-              <h6 className="collapse-header">Action:</h6>
-              <a className="collapse-item" href="">Administration</a>
-              <a className="collapse-item" href="">classes</a>
-              <a className="collapse-item" href="" data-toggle="modal" data-target="#exampleModalCenterStudents">Etudiants</a>
-              <a className="collapse-item" href="">Professeurs</a>
-            </div>
-          </div>
-    </li>*/}
 
       <div className="text-center d-none d-md-inline">
         <button 
@@ -320,7 +303,8 @@ function SidebarAdmin() {
           onClick={() => {
             setToggled(!toggled);
           }}
-        ></button>
+        >
+        </button>
       </div>
 
     </ul>
