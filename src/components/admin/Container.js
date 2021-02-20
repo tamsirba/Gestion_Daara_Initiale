@@ -27,7 +27,7 @@ function Content() {
                         <a className="dropdown-item" href="#">Administration</a>
                         <a className="dropdown-item" href="#">Professeurs</a>
                         <a className="dropdown-item" href="#">Etudiants</a>
-                        <a className="dropdown-item" href="#">classes</a>
+                        <a className="dropdown-item" href="#">Classes</a>
                     </div>
                 </div>
                 <a 

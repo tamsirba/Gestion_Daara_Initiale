@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PopupModul from '../Dialog/PopupModul';
-import ModulForm from '../Forms/formModul';
 import '../../styles/gesdaara.css';
 import '../../assets/datatables/dataTables.bootstrap4.css';
 import * as GoIcons from 'react-icons/go';
@@ -11,16 +9,16 @@ $.DataTable = require('datatables.net-bs4');
 const TableHeading = (
     <tr>
         <th>N°</th>
-        <th>Nom module</th>
-        <th>Unité d'enseignement</th>
-        <th>Semestre</th>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Date de naissance</th>
+        <th>Genre</th>
+        <th>Matricule</th>
         <th>Action</th>
     </tr>
 );
 
-function ContentModul() {
-
-    const [openPopupModul, setOpenPopupModul] = useState(false);
+function ContentStudent() {
 
     useEffect(() => {
         const dataTableResult = $('#dataTable').DataTable();
@@ -32,7 +30,7 @@ function ContentModul() {
     return (
         <div className="container-fluid">
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Module</h1>
+                <h1 className="h3 mb-0 text-gray-800">Paramètres/Etudiant</h1>
                 <div className="dropdown">
                     <button 
                         className="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm dropdown-toggle" 
@@ -67,21 +65,8 @@ function ContentModul() {
                             className="card-header py-3 d-flex 
                             flex-row align-items-center justify-content-between">
                             <h6 className="m-0 font-weight-bold text-black">
-                                Modules
+                                Etudiants
                             </h6>
-                            <div class="dropdown no-arrow">
-                                <a 
-                                    className="dropdown-toggle" 
-                                    type="button"
-                                    onClick={() => setOpenPopupModul(true)}>
-                                    <i className="fas fa-plus-circle"></i>
-                                </a>
-                            </div>
-                            <PopupModul
-                                openPopupModul={openPopupModul}
-                                setOpenPopupModul={setOpenPopupModul}>
-                                <ModulForm />
-                            </PopupModul>
                         </div>
                         <div className="card-body">
                             <div className="table-responsive">
@@ -92,6 +77,8 @@ function ContentModul() {
                                     <thead>{TableHeading}</thead>
                                     <tbody>
                                         <tr>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -127,4 +114,4 @@ function ContentModul() {
 }
 
 
-export default ContentModul;
+export default ContentStudent;
