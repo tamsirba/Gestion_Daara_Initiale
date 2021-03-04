@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Grid, } from '@material-ui/core';
 import Controls from "../Controls/Controls";
 import { useForm, Form } from '../useForm';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const genderItems = [
     { id: 'M.', title: 'M.' },
     { id: 'Mme', title: 'Mme' },
-    { id: 'Autres', title: 'Autres' },
 ]
 
 const campusItems = [
@@ -33,6 +33,11 @@ const initialFValues = {
 
 export default function AdminForm(props) {
     const { addOrEdit, recordForEdit } = props
+
+    const handleSuccess = () => toast.success("✔️ event success");
+
+    const handleError = () => toast.error(" event error");
+
 
     const validate = (fieldValues = values) => {
         let temp = { ...errors }
@@ -143,7 +148,9 @@ export default function AdminForm(props) {
                     <div>
                         <Controls.Button
                             type="submit"
-                            text="Ajouter" />
+                            text="Ajouter"
+                            onClick={handleSuccess} />
+                        <ToastContainer />
                         <Controls.Button
                             text="Reset"
                             color="default"

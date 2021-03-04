@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/gesdaara.css';
 import '../../assets/datatables/dataTables.bootstrap4.css';
 import * as GoIcons from 'react-icons/go';
+import * as SiIcons from 'react-icons/si';
 
 const $ = require('jquery');
 $.DataTable = require('datatables.net-bs4');
@@ -59,6 +60,48 @@ function ContentStudent() {
                 </a>
             </div>
             <div className="row">
+                <div className="col-lg-4 col-xs-4">
+                  <div className="small-box bg-aqua"> 
+                    <div className="inner">
+                      <h3>IGL1AB</h3>
+                      <p>30</p>
+                    </div>
+                    <div className="icon">
+                        <SiIcons.SiGoogleclassroom />
+                    </div>
+                    <a href="" target="_blank" className="small-box-footer">
+                      Afficher Liste <i className="fa fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-xs-4">
+                  <div className="small-box bg-red">
+                    <div className="inner">
+                      <h3>BAFL3CD</h3>
+                      <p>50</p>
+                    </div>
+                    <div className="icon">
+                        <SiIcons.SiGoogleclassroom />
+                    </div>
+                    <a href="" target="_blank" className="small-box-footer">
+                        Afficher Liste <i className="fa fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-xs-4">
+                  <div className="small-box bg-green">
+                    <div className="inner">
+                      <h3>CGL2EF</h3>
+                      <p>90</p>
+                    </div>
+                    <div className="icon">
+                        <SiIcons.SiGoogleclassroom />
+                    </div>
+                    <a href="" target="_blank" className="small-box-footer">
+                        Afficher Liste <i className="fa fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
                 <div className="col-xl-12 col-lg-11">
                     <div className="card shadow mb-4">
                         <div 
