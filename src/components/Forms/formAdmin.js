@@ -5,9 +5,11 @@ import { useForm, Form } from '../useForm';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const genderItems = [
     { id: 'M.', title: 'M.' },
     { id: 'Mme', title: 'Mme' },
+    { id: 'autres', title: 'Autres' },
 ]
 
 const campusItems = [
@@ -31,8 +33,11 @@ const initialFValues = {
     gender: 'M.',
 }
 
+
 export default function AdminForm(props) {
     const { addOrEdit, recordForEdit } = props
+
+ 
 
     const handleSuccess = () => toast.success("✔️ event success");
 
@@ -150,11 +155,11 @@ export default function AdminForm(props) {
                             type="submit"
                             text="Ajouter"
                             onClick={handleSuccess} />
-                        <ToastContainer />
                         <Controls.Button
                             text="Reset"
                             color="default"
                             onClick={resetForm} />
+                        <ToastContainer />
                     </div>
                 </Grid>
             </Grid>
